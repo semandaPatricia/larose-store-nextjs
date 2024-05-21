@@ -1,4 +1,4 @@
-"use client"
+
 import Image from "next/image";
 import Slider from "@/components/Slider";
 import CategoryList from "@/components/CategoryList";
@@ -7,20 +7,29 @@ import { wixClientServer } from "@/libs/wixClientServer";
 import { Suspense, useContext, useEffect } from "react";
 export default function Home() {
   //TEST (FETCHING ON THE CLIENT COMPONENT)
-  const wixClient = useWixClient();
-  useEffect(() => {
-    const getProducts = async () => {
-      try {
-        const res = await wixClient.products.queryProducts().find();
-        console.log(res);
-      } catch (error) {
-        console.error('Error fetching products:', error);
-        // Handle the error here (e.g., display an error message to the user)
-      }
-    };
 
-    getProducts();
-  }, []); // Empty array for initial fetch, adjust if needed
+  //const wixClient = useWixClient();
+  //useEffect(() => {
+    //const getProducts = async () => {
+    //try {
+      //  const res = await wixClient.products.queryProducts().find();
+        //console.log(res);
+       //} catch (error) {
+        //  console.error('Error fetching products:', error);
+        // Handle the error here (e.g., display an error message to the user)
+     // }};
+
+    // getProducts();
+  //   }, []); // Empty array for initial fetch, adjust if needed
+  
+
+    // TEST (FETCHING ON THE SERVER COMPONENT)
+
+  // const wixClient = await wixClientServer();
+
+  // const res = await wixClient.products.queryProducts().find();
+
+  // console.log(res);
 
   return (
     <div className=''>
