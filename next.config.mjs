@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['loremflickr.com', 'images.pexels.com','cdn.dribbble.com'],
+    domains: ['images.unsplash.com', 'images.pexels.com','cdn.dribbble.com'],
 },
     remotePatterns: [
         {
