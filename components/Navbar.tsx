@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import Image from "next/image";
-
+import Menu from "./Menu";
 import dynamic from "next/dynamic";
 // import NavIcons from "./NavIcons";
 
@@ -13,9 +13,9 @@ const Navbar = () => {
       {/* MOBILE */}
       <div className="h-full flex items-center justify-between md:hidden">
         <Link href="/">
-          <div className="text-2xl tracking-wide">LAMA</div>
+          <div className="text-2xl tracking-wide">Larose</div>
         </Link>
-        
+        <Menu />
       </div>
       {/* BIGGER SCREENS */}
       <div className="hidden md:flex items-center justify-between gap-8 h-full">
