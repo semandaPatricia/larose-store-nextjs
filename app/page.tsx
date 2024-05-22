@@ -32,9 +32,9 @@ export default function Home() {
   // console.log(res);
 
   //const url = "https://manage.wix.com/dashboard/bd6175f5-2fad-493e-93ad-47e0ea890ebc/store/categories/list/category/05a05f65-17b1-4211-6bf1-62ae9eab5876"
-// Split the URL and extract category ID
-//const urlParts = url.split('/');
-//const categoryId = urlParts[urlParts.length - 2];
+  // Split the URL and extract category ID
+  //const urlParts = url.split('/');
+  //const categoryId = urlParts[urlParts.length - 2];
 
   return (
     <div className="">
@@ -45,30 +45,28 @@ export default function Home() {
           Categories
         </h1>
         <Suspense fallback={<Skeleton />}>
-        <CategoryList />
+          <CategoryList />
         </Suspense>
       </div>
       {/*FEATURED PRODUCTS */}
       <div className="mt-24 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
         <h1 className="text-2xl">Featured Products</h1>
         <Suspense fallback={<Skeleton />}>
-        <ProductList
+          <ProductList
             categoryId={process.env.FEATURED_PRODUCTS_FEATURED_CATEGORY_ID!}
             limit={4}
           />
-         
-      </Suspense>
+        </Suspense>
       </div>
-{/*NEW PRODUCTS */}
+      {/*NEW PRODUCTS */}
       <div className="mt-24 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
         <h1 className="text-2xl"> NEW Products</h1>
         <Suspense fallback={<Skeleton />}>
-         
-        <ProductList 
+          <ProductList
             categoryId={process.env.FEATURED_PRODUCTS_NEW_CATEGORY_ID!}
             limit={4}
           />
-      </Suspense>
+        </Suspense>
       </div>
     </div>
   );
