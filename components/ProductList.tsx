@@ -51,7 +51,7 @@ const ProductList = async ({
   const res = await productQuery.find();
 
   return (
-    <div className="mt-12 flex gap-x-6 gap-y-10 justify-between flex-wrap">
+    <div className="mt-10 flex flex-wrap   gap-x-8 gap-y-16   justify-between ">
       {res.items.map((product: products.Product) => (
         <Link
           href={"/" + product.slug}
@@ -73,7 +73,6 @@ const ProductList = async ({
                 fill
                 sizes="25vw"
                 className="absolute object-cover rounded-md"
-                
               />
             )}
           </div>
@@ -103,9 +102,9 @@ const ProductList = async ({
       ))}
       {searchParams?.cat || searchParams?.name ? (
         <Pagination
-          currentPage={res.currentPage || 0}
-          hasPrev={res.hasPrev()}
-          hasNext={res.hasNext()}
+        currentPage={res.currentPage || 0}
+        hasPrev={res.hasPrev()}
+        hasNext={res.hasNext()}
         />
       ) : null}
     </div>
