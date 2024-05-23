@@ -25,6 +25,7 @@ const CategoryList = async () => {
                 fill
                 sizes="20vw"
                 className="object-cover"
+                
               />
             </div>
             <h1 className="mt-8 font-light text-xl tracking-wide">

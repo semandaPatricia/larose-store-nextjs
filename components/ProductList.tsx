@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import DOMPurify from "isomorphic-dompurify";
 import Pagination from "./Pagination";
+import { CiBookmark } from "react-icons/ci";
 
 const PRODUCT_PER_PAGE = 8;
 
@@ -50,7 +51,7 @@ const ProductList = async ({
   const res = await productQuery.find();
 
   return (
-    <div className="mt-12 flex gap-x-8 gap-y-16 justify-between flex-wrap">
+    <div className="mt-12 flex gap-x-6 gap-y-10 justify-between flex-wrap">
       {res.items.map((product: products.Product) => (
         <Link
           href={"/" + product.slug}
@@ -72,11 +73,12 @@ const ProductList = async ({
                 fill
                 sizes="25vw"
                 className="absolute object-cover rounded-md"
+                
               />
             )}
           </div>
           <div className="flex justify-between">
-            <span className="font-medium">{product.name}</span>
+            <span className="">{product.name}</span>
             <span className="font-semibold">${product.price?.price}</span>
           </div>
           {product.additionalInfoSections && (
@@ -91,9 +93,12 @@ const ProductList = async ({
               }}
             ></div>
           )}
-          <button className="rounded-2xl ring-1 ring-lama text-lama w-max py-2 px-4 text-xs hover:bg-lama hover:text-white">
-            Add to Cart
+          <div className="flex  justify-between  ">
+            <button className="rounded-xl ring-1 ring-lama text-lama w-max py-1 px-4 text-xs hover:bg-lama hover:text-gray-600">
+            Add 
           </button>
+          <CiBookmark />
+          </div>
         </Link>
       ))}
       {searchParams?.cat || searchParams?.name ? (
