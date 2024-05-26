@@ -1,7 +1,5 @@
 "use client";
 import React from 'react'
-
-
 import { useWixClient } from "@/hooks/useWixClient";
 import { LoginState } from "@wix/sdk";
 import { useRouter } from "next/navigation";
@@ -31,7 +29,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailCode, setEmailCode] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); //false 
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
 
@@ -142,7 +140,7 @@ const Login = () => {
             <input
               type="text"
               name="username"
-              placeholder="john"
+              placeholder="mario"
               className="ring-2 ring-gray-300 rounded-md p-4"
               onChange={(e) => setUsername(e.target.value)}
             />
@@ -154,7 +152,7 @@ const Login = () => {
             <input
               type="email"
               name="email"
-              placeholder="john@gmail.com"
+              placeholder="mario@gmail.com"
               className="ring-2 ring-gray-300 rounded-md p-4"
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -191,12 +189,15 @@ const Login = () => {
             Forgot Password?
           </div>
         )}
-        <button
-          className="bg-lama text-white p-2 rounded-md disabled:bg-pink-200 disabled:cursor-not-allowed"
-          disabled={isLoading}
+
+          <button
+          className="bg-lama text-white p-2 rounded-md bg-black disabled:bg-pink-200 disabled:cursor-not-allowed"
+     
         >
-          {isLoading ? "Loading..." : buttonTitle}
+          { buttonTitle}
         </button>
+       
+       
         {error && <div className="text-red-600">{error}</div>}
         {mode === MODE.LOGIN && (
           <div
